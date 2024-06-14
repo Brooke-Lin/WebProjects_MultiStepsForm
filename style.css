@@ -1,0 +1,542 @@
+:root{
+    --ff-sans: "Ubuntu", sans-serif;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --fs-small: 0.75rem;
+    --fs-regular: 1rem;
+    --fs-large: 1.5rem;
+
+    --clr-primary-500: hsl(213, 96%, 18%);
+    --clr-primary-300: hsl(243, 100%, 62%);
+    --clr-primary-200: hsl(228, 100%, 84%);
+    --clr-primary-100: hsl(206, 94%, 87%);
+    --clr-primary-400: hsl(354, 84%, 57%);
+
+    --clr-neutral-500: hsl(231, 11%, 63%);
+    --clr-neutral-400: hsl(229, 24%, 87%);
+    --clr-neutral-300: hsl(217, 100%, 97%);
+    --clr-neutral-200: hsl(231, 100%, 99%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height*/
+html, 
+body{
+    height:100%
+}
+    /*4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+  /*
+    5. Improve media defaults
+  */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+  /*
+    6. Remove built-in form typography styles
+  */
+input, button, textarea, select {
+    font: inherit;
+}
+  /*
+    7. Avoid text overflows
+  */
+p, h1, h2, h3, h4, h5, h6 {
+    font-size: var(--fs-regular);
+    overflow-wrap: break-word;
+}
+
+
+
+
+
+body{
+    font-family: var(--ff-sans);
+    font-size: var(--fs-regular);
+    background-color: var(--clr-primary-100);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & h1{
+        font-size: var(--fs-large);
+        color: var(--clr-primary-500);
+    }
+
+    & h3{
+        color: var(--clr-primary-500);
+    }
+
+    & .description{
+        color: var(--clr-neutral-400);
+        font-weight: var(--fw-500);
+    }
+}
+
+
+
+
+
+
+.background-wrapper{
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+}
+@media(max-width: 650px){
+    .background-wrapper{
+        max-width: 375px;
+        border-radius: 0;
+    }
+}
+
+.main-wrapper{
+    display: flex;
+    padding: 1rem;
+    gap: 4.75rem;
+}
+@media(max-width: 650px){
+    .main-wrapper{
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+}
+
+.flex-group{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.sidebar{
+    background-image: url(file:///Users/brooke/Desktop/multi-step-form-main/assets/images/bg-sidebar-desktop.svg);
+    width: 100%;
+    max-width: 274px;
+    height: 568px;
+    padding: 2.5rem;
+    color: var(--clr-neutral-400);
+    text-transform: uppercase;
+    font-weight: var(--fw-500);
+    border-radius: 1rem;
+}
+@media(max-width: 650px){
+    .sidebar{     
+        background-image: url(file:///Users/brooke/Desktop/multi-step-form-main/assets/images/bg-sidebar-mobile.svg);
+        width: 100%;
+        max-width: 375px;
+        height: auto;
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem; 
+    }
+}
+
+.sidebar-gap{
+    gap: 1rem;
+    margin-bottom: 1.25rem; 
+}
+
+.number-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--clr-neutral-400);
+    border-radius: 1.5rem ;
+    &.active{
+        background-color: var(--clr-primary-200);
+        color: var(--clr-primary-500);
+        border: 0;
+    }
+}
+
+
+.step-list span{
+    font-size: var(--fs-small);
+    color: var(--clr-neutral-500);
+}
+@media(max-width: 650px){
+    .step-list{
+        display: none;
+    }
+}
+
+
+
+
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+section{
+    display: grid;
+    gap: 1rem;
+}
+@media(max-width: 650px){
+    section{
+        padding: 1rem;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        background-color: var(--clr-neutral-100);
+        z-index: 20;
+        margin-top:-40px;
+    }
+}
+
+.button-group{
+    display: flex;
+    justify-content: space-between;
+
+    & .prev-nav{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 0;
+    }
+
+    & .disabled{
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    & .next-nav{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 0;
+        background-color: var(--clr-primary-500);
+        color: var(--clr-neutral-100);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+@media(max-width: 650px){
+    .button-group{
+        padding: 1rem;
+    }
+}
+
+
+
+#personal-info{
+    display: grid;
+    gap: 2.5rem;
+
+    & .flex-group{
+        justify-content: space-between;
+    }
+
+    & h3{
+        font-size: var(--fs-small);
+    }
+
+    & .error-message{
+        display: none;
+        color: var(--clr-primary-400);
+        font-size: var(--fs-small);
+        font-weight: var(--fw-700);
+    }
+
+    & input{
+        width: 100%;
+        height: 90%;
+        border-radius: 0.5rem;
+        border: 1px solid var(--clr-neutral-400); 
+        padding-left: 1rem;
+        &:hover{
+            border: 1px solid var(--clr-primary-300);
+            cursor: pointer;
+        }
+        &.warning{
+            border: 1px solid var(--clr-primary-400);
+        }
+    }
+}
+
+#select-plan{
+    display: grid;
+    gap: 2.5rem;
+}
+
+.plan-options-wrapper{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+@media(max-width: 650px){
+    .plan-options-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+/*make the circle in front of the radio button disappear*/
+.plan-options input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.plan-descriptions{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 140px;
+    height: 170px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--clr-neutral-400);
+    & h3{
+        font-size: var(--fs-regular);
+    }
+    & span, p{
+        font-size: var(--fs-small);
+        color: var(--clr-neutral-500);
+    }
+    &:hover{
+        cursor: pointer;
+        border: 1px solid var(--clr-neutral-500);
+    }
+}
+@media(max-width: 650px){
+    .plan-descriptions{
+        flex-direction: row;
+        width: 340px;
+        height: 100px;
+        
+    }
+}
+
+.plan-options input[type="radio"]:checked + .plan-descriptions {
+    border: 1px solid var(--clr-primary-300); 
+}
+
+.annual-fee-promotion{
+    display: none;
+}
+
+/*create a toggle switch*/
+/*start by hiding the checkbox element*/
+#toggle{
+    display: none;
+}
+
+/*style the toggle appearance*/
+.toggle-appearance{
+    display: inline-block;
+    /*the display property is set to inline-block to make the switch come in line with text in span tag*/
+    width: 40px;
+    height: 20px;
+    background-color: var(--clr-primary-500);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-inline: 2rem;
+    
+    /*create the inner part of the switch*/
+    &::before{
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: var(--clr-neutral-100);
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+}
+
+/*when the switch is checked, the background color of the label will change*/
+#toggle:checked + .toggle-appearance{
+    background-color: var(--clr-primary-300);
+    
+    /*add an animation to the toggle effect, making the inner part of the switch move when it is checked*/
+    &::before{
+        transform: translateX(20px);
+    }
+}
+
+.toggle-appearance-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: var(--clr-neutral-200);
+    padding: 0.5rem;
+}
+
+
+
+#add-ons{
+    display: grid;
+    gap: 1rem;
+}
+
+
+.checkbox-button{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--clr-neutral-400);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+
+    &:hover{
+        cursor: pointer;
+        border: 1px solid var(--clr-primary-300);
+    }
+}
+
+.service-description{
+    padding-left: 2rem;
+}
+
+.online-service{
+    padding-left: 5rem;
+}
+
+.larger-storage{
+    padding-left: 7.2rem;
+}
+
+.customizable-profile{
+    padding-left: 4.2rem;
+}
+
+.price-list{
+    color: var(--clr-primary-300);
+}
+
+
+
+.summary-wrapper{
+    display: grid;
+    gap: 1rem;
+
+    & .flex-group{
+        justify-content: space-between;
+    }
+}
+
+.summary__selection-result{
+    background-color: var(--clr-neutral-300);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.summary__membership-selection{
+    border-bottom: 1px solid var(--clr-neutral-400);
+    padding-bottom: 2rem;
+}
+
+.summary__service-selection{
+    display: grid;
+    gap: 1rem;
+}
+
+.total-result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.summary__price-details{
+    margin-left: 12rem;
+}
+
+.total__price-details{
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-500);
+
+}
+
+.membership-price__highlighted{
+    font-size: var(--fs-regular);
+    color: var(--clr-primary-500);
+    font-weight: var(--fw-700);
+}
+
+.total-price__hightlighted{
+    font-size: var(--fs-large);
+    color: var(--clr-primary-300);
+    font-weight: var(--fw-700);
+}
+
+.change-selection,
+.add-ons__result p,
+.summary__total-result p{
+    font-size: var(--fs-regular);
+    color: var(--clr-neutral-500);
+}
+
+
+#thank-you-page{
+    text-align: center;
+    padding-right: 4rem;
+    gap: 1rem;
+
+    & p{
+        color: var(--clr-neutral-500);
+    }
+}
+
+.img{
+    display: block;
+    margin: auto;
+}
+
+
+#select-plan,
+#add-ons,
+#summary,
+#thank-you-page{
+    display: none;
+}
+
+/*.content-details{
+    display: none;
+    &.show{
+        display: block;
+    }
+}
+
+.page-nav {
+    &.disabled{
+        opacity: 0.2;
+        pointer-events: none;
+    }
+}*/
