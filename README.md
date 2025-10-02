@@ -12,7 +12,7 @@ A responsive multi-step form built using JavaScript, HTML, and CSS. This project
 * Responsive design for mobile and desktop
 * Easy to customize and integrate into other projects
 
-**Skills Used**
+**Built With**
 -
 * Javascript
 * HTML
