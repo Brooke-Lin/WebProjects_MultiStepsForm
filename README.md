@@ -20,6 +20,7 @@ A responsive multi-step form built using JavaScript, HTML, and CSS. This project
 
 **Demo**
 -
+https://brooke-lin.github.io/multi-steps-form/
 
 
 
