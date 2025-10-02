@@ -136,7 +136,7 @@ body{
 
 
 .sidebar{
-    background-image: url(bg-sidebar-desktop.svg);
+    background-image: url("bg-sidebar-desktop.svg");
     width: 100%;
     max-width: 274px;
     height: 568px;
@@ -148,7 +148,7 @@ body{
 }
 @media(max-width: 650px){
     .sidebar{     
-        background-image: url(bg-sidebar-mobile.svg);
+        background-image: url("bg-sidebar-mobile.svg");
         width: 100%;
         max-width: 375px;
         height: auto;
