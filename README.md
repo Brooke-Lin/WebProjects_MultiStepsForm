@@ -22,6 +22,13 @@ A responsive multi-step form built using JavaScript, HTML, and CSS. This project
 -
 https://brooke-lin.github.io/multi-steps-form/
 
+**Design Attribution**
+-
+The design for this project is based on a challenge from the Frontend Mentor website, 
+but all code in this project was written by me.
+
+
+
 
 
 
